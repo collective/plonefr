@@ -1,0 +1,56 @@
+/* carousel styling
+   This is meant to work with the plone.com branch of Products.Carousel (github collective)
+*/
+
+.carousel-readmore {
+    background: url("../images/button.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 35px;
+    letter-spacing: -0.05em;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 178px;
+    border: none;
+}
+.carousel-readmore:hover {
+    background: url("../images/button.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
+    color: #FFFFFF !important;
+}
+
+.carousel-pager {
+    height: 0;
+    left: 0;
+    margin: -34px 0 0 !important;
+    padding: 0 2%;
+    position: absolute;
+    top: 50%;
+    width: 96%;
+}
+.carousel-pager a {
+    color: transparent !important;
+}
+.carousel-pager .carousel-pager-button-prev {
+    background: url("../images/banner_arrow.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    float: left;
+    height: 68px;
+    padding: 0;
+    width: 42px;
+}
+.carousel-pager .carousel-pager-button-next {
+    background: url("../images/banner_arrow.png") no-repeat scroll right top rgba(0, 0, 0, 0);
+    float: right;
+    height: 68px;
+    padding: 0;
+    width: 42px;
+}
+.carousel-pager-button-prev:hover {
+    background-position: left bottom;
+}
+.carousel-pager-button-next:hover {
+    background-position: right bottom;
+}

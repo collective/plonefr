@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plonefr.theme">
+  <genericsetup:registerProfile
+      name="default"
+      title="plonefr.theme"
+      directory="profiles/default"
+      description="Install the plonefr.theme addon on this plone site."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+</configure>
