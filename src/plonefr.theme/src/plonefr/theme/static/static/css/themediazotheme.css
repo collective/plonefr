@@ -222,6 +222,8 @@ background: transparent url(../images/navsection.png) right bottom no-repeat;
 #above-portal-content {
 background: #303030;
 min-height: 60px;
+background: transparent url('../images/carousel_bg.png') no-repeat;
+background-size: cover;
 }
 .carousel {
 position: relative;
@@ -246,7 +248,6 @@ width: auto !important;
 max-width: none !important;
 }
 .carousel-text {
-position: absolute;
 top: 0;
 bottom: 0;
 left: 0;
@@ -259,7 +260,7 @@ background: transparent;
 text-align: left;
 color: #fff;
 }
-.carousel-text.center {
+.carousel-text .center {
 text-align: center;
 }
 .carousel-text.right {
