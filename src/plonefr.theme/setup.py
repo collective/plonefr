@@ -58,11 +58,7 @@ setup(
         "plone.directives.form",
         "plone.app.theming",
         "plone.app.themingplugins",
-        # with_ploneproduct_pacaching
-        "plone.app.caching",
-        # with_binding_pil
-        "Pillow",
-        # -*- Extra requirements: -*-
+        "plone.app.mosaic",
     ],
     extras_require={
         "test": ["plone.app.testing", "ipython"]
