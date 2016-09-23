@@ -1,137 +1,144 @@
 <rules
     xmlns="http://namespaces.plone.org/diazo"
     xmlns:css="http://namespaces.plone.org/diazo/css"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-        
-
-    <theme href="casestudy.html" css:if-content=".portaltype-case_study.template-view" />
-    <theme href="index.html" css:if-content=".section-front-page.template-document_view" />
-    <theme href="content.html" css:if-content="#visual-portal-wrapper" />
-    
-    <!-- user search doesn't work on Sharing tab with theme on -->
-    <notheme css:if-content=".template-sharing" />
-
-    <!--Head-->
-    <copy css:content="html" css:theme="html" attributes="lang dir"/>
-    <replace css:content="head base" css:theme="head base"/>
-    <replace css:content="head title" css:theme="head title"/>
-    <before css:content="head style, head link, head script, head meta" css:theme-children="head"/>
-
-    <merge attributes="class" css:content="body" css:theme="body" />
-    <copy attributes="id dir" css:content="body" css:theme="body" />
-
-    <copy attributes="href" css:content="#portal-logo" css:theme="#portal-header #portal-logo" />
-    <replace css:content="#portal-globalnav" css:theme="#portal-header .nav-primary ul" />
-
-    <!-- Homepage -->
-    <rules css:if-content=".section-front-page.template-document_view">
-        <replace css:content="#portal-column-content" css:theme=".diazo-index #portal-column-content" />
-        <replace css:content="#portal-column-one" css:theme=".diazo-index #portal-column-one" />
-        <replace css:content="#portal-column-two" css:theme=".diazo-index #portal-column-two" />
-        <drop css:content="#portal-breadcrumbs" />
-        <drop css:content="#portal-column-content h1.documentFirstHeading" />
-        <replace css:content="#viewlet-below-content" css:theme=".diazo-index #below-portal-content" method="raw" />
-        <drop css:content="#portal-column-content #viewlet-below-content" />
-        <drop css:content="#portal-column-content" attributes="class" />
-        <drop css:content="#portal-column-two" attributes="class" />
-        
-        <!-- carousel -->
-        <after css:content="#viewlet-above-content" css:theme-children="#above-portal-content" />
-        <drop css:content=".carousel-pager" css:if-not-content=".carousel-banner-2" />
-    </rules>
-    <rules css:if-not-content=".section-front-page.template-document_view">
-        <drop css:theme="#home-header" />
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+            
+    <notheme css:if-not-content="#visual-portal-wrapper" />
+    <rules css:if-content=".userrole-authenticated, .template-login_form, .template-mail_password_form, .template-pwr
+    eset_form">
+        <xi:include href="++theme++barceloneta/rules.xml" />
+        <before css:theme-children="head">
+            <link rel="stylesheet" type="text/css" href="./++theme++barceloneta/less/barceloneta-compiled.css" />
+        </before>
     </rules>
 
-    <before css:theme-children="#above-portal-content" css:content="#portal-personaltools-wrapper" />
-    <!--<drop css:content="#portal-breadcrumbs" />-->
-    <drop css:content="#breadcrumbs-you-are-here" />
-    <replace css:content="#portal-column-content" css:theme=".diazo-content #portal-column-content" if-not-path="/providers/" />
-    <replace css:content="#portal-column-one" css:theme=".diazo-content #portal-column-one" />
-    <replace css:content="#portal-column-two" css:theme=".diazo-content #portal-column-two" />
-    <drop css:content="#category" />
-    
-    <!-- styles for case studies -->
-    <rules css:if-content=".portaltype-case_study.template-view">
-        <drop css:theme="#above-portal-content" css:if-not-content="#portal-personaltools" />
-        <before css:theme="#portal-columns" css:content="#edit-bar"/>
-        <copy css:content="#form-widgets-case_url a" css:theme=".banner a" attributes="href" />
+    <rules css:if-not-content=".userrole-authenticated, .template-login_form, .template-mail_password_form, .template-pwr
+    eset_form">
+        <theme href="casestudy.html" css:if-content=".portaltype-case_study.template-view" />
+        <theme href="home.html" css:if-content=".section-front-page.template-document_view" />
+        <theme href="content.html" css:if-content="#visual-portal-wrapper" />
         
-        <replace css:theme=".banner img">
-            <img src="@@images/jumbotron" alt="Large project image" />
-        </replace>
 
-        <before css:content="h1.documentFirstHeading" css:theme-children=".maincol" />
-        <before css:content="div.documentDescription" css:theme-children=".maincol" />
-        <before css:content="#content #form-widgets-case_study_text" css:theme-children=".maincol" />
+        <!--Head-->
+        <copy css:content="html" css:theme="html" attributes="lang dir"/>
+        <replace css:content="head base" css:theme="head base"/>
+        <replace css:content="head title" css:theme="head title"/>
+        <before css:content="head style, head link, head script, head meta" css:theme-children="head"/>
+
+        <merge attributes="class" css:content="body" css:theme="body" />
+        <copy attributes="id dir" css:content="body" css:theme="body" />
+
+        <copy attributes="href" css:content="#portal-logo" css:theme="#portal-header #portal-logo" />
+        <replace css:content="#portal-globalnav" css:theme="#portal-header .nav-primary ul" />
+
+        <!-- Homepage -->
+        <rules css:if-content=".section-front-page.template-document_view">
+            <replace css:content="#portal-column-content" css:theme=".diazo-index #portal-column-content" />
+            <replace css:content="#portal-column-one" css:theme=".diazo-index #portal-column-one" />
+            <replace css:content="#portal-column-two" css:theme=".diazo-index #portal-column-two" />
+            <drop css:content="#portal-breadcrumbs" />
+            <drop css:content="#portal-column-content h1.documentFirstHeading" />
+            <replace css:content="#viewlet-below-content" css:theme=".diazo-index #below-portal-content" method="raw" />
+            <drop css:content="#portal-column-content #viewlet-below-content" />
+            <drop css:content="#portal-column-content" attributes="class" />
+            <drop css:content="#portal-column-two" attributes="class" />
+            
+            <!-- carousel -->
+            <after css:content="#viewlet-above-content" css:theme-children="#above-portal-content" />
+            <drop css:content=".carousel-pager" css:if-not-content=".carousel-banner-2" />
+        </rules>
+
+        <before css:theme-children="#above-portal-content" css:content="#portal-personaltools-wrapper" />
+        <!--<drop css:content="#portal-breadcrumbs" />-->
+        <drop css:content="#breadcrumbs-you-are-here" />
+        <replace css:content="#portal-column-content" css:theme=".diazo-content #portal-column-content" if-not-path="/providers/" />
+        <replace css:content="#portal-column-one" css:theme=".diazo-content #portal-column-one" />
+        <replace css:content="#portal-column-two" css:theme=".diazo-content #portal-column-two" />
+        <drop css:content="#category" />
         
-        <replace css:content="#viewlet-below-content" css:theme=".belowcontent" />
-        
-        <!-- right column -->
-        <replace css:content="#form-widgets-video_embed p" css:theme=".rightcol .videos p" />
-        <drop css:theme=".rightcol .videos" css:if-not-content="#form-widgets-video_embed > *" />
-        
-        <replace css:content-children="#form-widgets-quote" css:theme=".rightcol .quote p" />
-        <drop css:theme=".rightcol .quote" css:if-not-content="#form-widgets-verticals > *" />
-        
-        <replace css:content="#thumbs" css:theme=".rightcol .gallery ul" href="story-images" />
-        <drop css:theme=".rightcol .gallery" css:if-not-content="#folder-listing a.contenttype-image" />
-        
-        <replace css:content="#form-widgets-verticals ul" css:theme=".rightcol .verticals ul" />
-        <drop css:theme=".rightcol .verticals" css:if-not-content="#form-widgets-verticals ul li" />
-        
-        <replace css:content="#form-widgets-featured_technologies ul" css:theme=".rightcol .tech ul" />
-        <drop css:theme=".rightcol .tech" css:if-not-content="#form-widgets-featured_technologies ul" />
-        
-        <replace css:content="#formfield-form-widgets-related_talks ul" css:theme=".rightcol .addons ul" />
-        <drop css:theme=".rightcol .addons" css:if-not-content="#formfield-form-widgets-related_talks ul" />
-        
-        <replace css:content="#sitelink" css:theme=".rightcol .link" href="site-link"/>
-        
-        <!-- bottom developer info -->
-        <replace css:theme=".developedby .developerLogo img" if="$developed_link">
-            <a href="{$developed_link}">
+        <!-- styles for case studies -->
+        <rules css:if-content=".portaltype-case_study.template-view">
+            <drop css:theme="#above-portal-content" css:if-not-content="#portal-personaltools" />
+            <before css:theme="#portal-columns" css:content="#edit-bar"/>
+            <copy css:content="#form-widgets-case_url a" css:theme=".banner a" attributes="href" />
+            
+            <replace css:theme=".banner img">
+                <img src="@@images/jumbotron" alt="Large project image" />
+            </replace>
+
+            <before css:content="h1.documentFirstHeading" css:theme-children=".maincol" />
+            <before css:content="div.documentDescription" css:theme-children=".maincol" />
+            <before css:content="#content #form-widgets-case_study_text" css:theme-children=".maincol" />
+            
+            <replace css:content="#viewlet-below-content" css:theme=".belowcontent" />
+            
+            <!-- right column -->
+            <replace css:content="#form-widgets-video_embed p" css:theme=".rightcol .videos p" />
+            <drop css:theme=".rightcol .videos" css:if-not-content="#form-widgets-video_embed > *" />
+            
+            <replace css:content-children="#form-widgets-quote" css:theme=".rightcol .quote p" />
+            <drop css:theme=".rightcol .quote" css:if-not-content="#form-widgets-verticals > *" />
+            
+            <replace css:content="#thumbs" css:theme=".rightcol .gallery ul" href="story-images" />
+            <drop css:theme=".rightcol .gallery" css:if-not-content="#folder-listing a.contenttype-image" />
+            
+            <replace css:content="#form-widgets-verticals ul" css:theme=".rightcol .verticals ul" />
+            <drop css:theme=".rightcol .verticals" css:if-not-content="#form-widgets-verticals ul li" />
+            
+            <replace css:content="#form-widgets-featured_technologies ul" css:theme=".rightcol .tech ul" />
+            <drop css:theme=".rightcol .tech" css:if-not-content="#form-widgets-featured_technologies ul" />
+            
+            <replace css:content="#formfield-form-widgets-related_talks ul" css:theme=".rightcol .addons ul" />
+            <drop css:theme=".rightcol .addons" css:if-not-content="#formfield-form-widgets-related_talks ul" />
+            
+            <replace css:content="#sitelink" css:theme=".rightcol .link" href="site-link"/>
+            
+            <!-- bottom developer info -->
+            <replace css:theme=".developedby .developerLogo img" if="$developed_link">
+                <a href="{$developed_link}">
+                    <img src="@@images/developed_by_picture/preview" alt="Provider Logo" />
+                </a>
+            </replace>
+            <replace css:theme=".developedby .developerLogo img" if-not="$developed_link">
                 <img src="@@images/developed_by_picture/preview" alt="Provider Logo" />
-            </a>
-        </replace>
-        <replace css:theme=".developedby .developerLogo img" if-not="$developed_link">
-            <img src="@@images/developed_by_picture/preview" alt="Provider Logo" />
-        </replace>
-        <drop css:theme=".developedby .developerLogo" css:if-not-content="#form-widgets-developed_by_picture img" />
-        <replace css:content="#form-widgets-developer_name" css:theme-children=".developedby .bio h4" />
-        <replace css:content="#form-widgets-developed_by" css:theme-children=".developedby .bio p" />
-        <replace css:theme=".developedby .bio a" if="$developed_link">
-            <a href="{$developed_link}">Visit portfolio</a>
-        </replace>
-        <drop css:theme=".developedby .bio a" if-not="$developed_link" />
-        <replace css:content="#form-widgets-contact_info" css:theme-children=".developedby .contacts" />
-    </rules>
-    
-    <!-- providers listing -->
-    <rules if-path="/providers/">
-        <copy attributes="class" css:theme="#portal-column-content" css:content="#portal-column-content" />
-        <before css:theme-children="#portal-column-content" css:content="#viewlet-above-content" />
-        <before css:theme-children="#portal-column-content" css:content="#edit-bar" />
-        <after css:theme-children="#portal-column-content #content">
-            <h1 class="documentFirstHeading">Plone Providers</h1> 
-        </after>
-        <after css:theme-children="#portal-column-content #content" css:content-children="#content-core" href="/providers/premium" />
-        <after css:theme-children="#portal-column-content #content">
-        </after>
-        <after css:theme-children="#portal-column-content #content" css:content-children="#content-core" href="/providers/sponsors" />
-        <after css:theme-children="#portal-column-content #content">
-        </after>
-        <after css:theme-children="#portal-column-content #content" css:content-children="#content-core" href="/providers/basic" />
-        <!--
-        <after css:theme-children="#portal-column-content #content">
-            <h1 class="documentFirstHeading">Premium Sponsors</h1>
-        </after>
-        <after css:theme-children="#portal-column-content #content" css:content-children="#content-core" href="/providers/other-sponsors" />
-        -->
-    </rules>
+            </replace>
+            <drop css:theme=".developedby .developerLogo" css:if-not-content="#form-widgets-developed_by_picture img" />
+            <replace css:content="#form-widgets-developer_name" css:theme-children=".developedby .bio h4" />
+            <replace css:content="#form-widgets-developed_by" css:theme-children=".developedby .bio p" />
+            <replace css:theme=".developedby .bio a" if="$developed_link">
+                <a href="{$developed_link}">Visit portfolio</a>
+            </replace>
+            <drop css:theme=".developedby .bio a" if-not="$developed_link" />
+            <replace css:content="#form-widgets-contact_info" css:theme-children=".developedby .contacts" />
+        </rules>
+        
+        <!-- providers listing -->
+        <rules if-path="/providers/">
+            <copy attributes="class" css:theme="#portal-column-content" css:content="#portal-column-content" />
+            <before css:theme-children="#portal-column-content" css:content="#viewlet-above-content" />
+            <before css:theme-children="#portal-column-content" css:content="#edit-bar" />
+            <after css:theme-children="#portal-column-content #content">
+                <h1 class="documentFirstHeading">Plone Providers</h1> 
+            </after>
+            <after css:theme-children="#portal-column-content #content" css:content-children="#content-core" href="/providers/premium" />
+            <after css:theme-children="#portal-column-content #content">
+            </after>
+            <after css:theme-children="#portal-column-content #content" css:content-children="#content-core" href="/providers/sponsors" />
+            <after css:theme-children="#portal-column-content #content">
+            </after>
+            <after css:theme-children="#portal-column-content #content" css:content-children="#content-core" href="/providers/basic" />
+            <!--
+            <after css:theme-children="#portal-column-content #content">
+                <h1 class="documentFirstHeading">Premium Sponsors</h1>
+            </after>
+            <after css:theme-children="#portal-column-content #content" css:content-children="#content-core" href="/providers/other-sponsors" />
+            -->
+        </rules>
 
-    <!-- foooooter -->
-    <append css:content="#portal-footer-wrapper" css:theme="#portal-footer-bottom .centered" />
-    <replace css:content="#portal-footer-wrapper script" css:theme="#footer-js" />
+        <!-- foooooter -->
+        <append css:content="#portal-footer-wrapper" css:theme="#portal-footer-bottom .centered" />
+        <replace css:content="#portal-footer-wrapper script" css:theme="#footer-js" />
 
+    </rules>
 </rules>
