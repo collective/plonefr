@@ -16,7 +16,7 @@
     <rules css:if-not-content=".userrole-authenticated, .template-login_form, .template-mail_password_form, .template-pwr
     eset_form">
         <theme href="casestudy.html" css:if-content=".portaltype-case_study.template-view" />
-        <theme href="home.html" css:if-content=".section-front-page.template-document_view" />
+        <theme href="home.html" css:if-content=".section-front-page" />
         <theme href="content.html" css:if-content="#visual-portal-wrapper" />
         
 
@@ -33,7 +33,7 @@
         <replace css:content="#portal-globalnav" css:theme="#portal-header .nav-primary ul" />
 
         <!-- Homepage -->
-        <rules css:if-content=".section-front-page.template-document_view">
+        <rules css:if-content=".section-front-page">
             <replace css:content="#portal-column-content" css:theme=".diazo-index #portal-column-content" />
             <replace css:content="#portal-column-one" css:theme=".diazo-index #portal-column-one" />
             <replace css:content="#portal-column-two" css:theme=".diazo-index #portal-column-two" />
@@ -43,10 +43,6 @@
             <drop css:content="#portal-column-content #viewlet-below-content" />
             <drop css:content="#portal-column-content" attributes="class" />
             <drop css:content="#portal-column-two" attributes="class" />
-            
-            <!-- carousel -->
-            <after css:content="#viewlet-above-content" css:theme-children="#above-portal-content" />
-            <drop css:content=".carousel-pager" css:if-not-content=".carousel-banner-2" />
         </rules>
 
         <before css:theme-children="#above-portal-content" css:content="#portal-personaltools-wrapper" />
