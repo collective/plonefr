@@ -133,7 +133,7 @@
         </rules>
 
         <!-- foooooter -->
-        <append css:content="#portal-footer-wrapper" css:theme="#portal-footer-bottom .centered" />
+        <append css:content-children="#portal-footer-wrapper" css:theme="#portal-footer-bottom .centered" />
         <replace css:content="#portal-footer-wrapper script" css:theme="#footer-js" />
 
     </rules>

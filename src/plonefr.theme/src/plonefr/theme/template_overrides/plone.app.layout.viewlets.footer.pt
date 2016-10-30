@@ -1,0 +1,37 @@
+<div i18n:domain="plone"
+     id="portal-footer">
+
+     <div id="portal-footer-bottom" class="row">
+             <div class="cell width-full position-0">
+                  <div class="centered">
+                         <div class="row">
+                                  <div class="cell width-1:4 position-0">
+                                      <img class="image-inline" src="/++theme++plonefr.theme/static/images/plone_footer.png"></div>
+                                  <div class="cell width-1:2 position-1:4">
+                                      <ul>
+                                          <li>
+                                                <a href="contact-info">Contactez-nous</a>
+                                          <li>
+                                          <li>
+                                                <a href="sitemap">Plan du site</a>
+                                          </li>
+                                          <li>
+                                                <a href="accessibility-info">Accessibilité</a>
+                                          </li>
+                                      </ul></div>
+                                  <div class="cell width-1:4 position-3:4">
+                                      <p>
+                                         <a href="http://twitter.com/plone">
+                                            <img class="image-inline" src="/++theme++plonefr.theme/static/images/twitter.png">
+                                         </a>&nbsp;
+                                         <a href="https://lists.plone.org/mailman/listinfo/plone-plone-fr">
+                                            <img class="image-inline" src="++theme++plonefr.theme/static/images/mail.png">
+                                         </a>
+                                      </p>
+                                  </div>
+                         </div>
+                  </div>
+             </div>
+        </div>
+
+</div>

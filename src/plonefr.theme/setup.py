@@ -59,6 +59,7 @@ setup(
         "plone.app.theming",
         "plone.app.themingplugins",
         "plone.app.mosaic",
+        "z3c.jbot",
     ],
     extras_require={
         "test": ["plone.app.testing", "ipython"]

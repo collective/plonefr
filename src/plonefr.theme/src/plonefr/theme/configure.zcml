@@ -25,5 +25,11 @@
   
   <include package="plone.resource" file="meta.zcml"/>
   <plone:static directory="static" type="theme" name="plonefr.theme" />
+
+  <browser:jbot
+      directory="template_overrides"
+      layer=".interfaces.IThemeSpecific"
+      />
+
 </configure>
 <!-- vim:set ft=xml: -->
