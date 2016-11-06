@@ -1157,3 +1157,6 @@ body.section-homepage-content.subsection-key-features #content-core li:first-chi
 .mosaic-grid-row-dark .mosaic-position-three-quarters h3 {
     background-position: center -2750px;
 }
+:not(.section-front-page) #portal-column-content {
+    margin: 0 3em;
+}
