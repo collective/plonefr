@@ -222,7 +222,7 @@ background: transparent url(../images/navsection.png) right bottom no-repeat;
 #above-portal-content {
 background: #303030;
 min-height: 60px;
-background: transparent url('../images/carousel_bg.png') no-repeat;
+background: transparent url('../images/carousel_bg.png') no-repeat center;
 background-size: cover;
 }
 .carousel {
