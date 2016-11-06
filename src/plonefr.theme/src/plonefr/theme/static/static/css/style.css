@@ -666,12 +666,14 @@ span.address {
 .portlet-static-try-plone li:last-of-type {
     margin-right: 0;
 }
-.portlet-static-try-plone li a {
+.portlet-static-try-plone li a,
+#content .mosaic-width-full a {
     background-color: #00bef1;
     text-transform: uppercase;
     color: #ffffff;
     padding: 3px 20px;
     border-radius: 6px;
+    text-decoration: none;
 }
 .portlet-static-try-plone li a:hover {
     background-color: #212121;
