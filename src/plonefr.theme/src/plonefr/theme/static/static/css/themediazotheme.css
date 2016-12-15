@@ -408,6 +408,55 @@ background-position: right bottom;
 .feature:nth-of-type(3n+4) {
     clear: left;
 }
+.section-fonctionnalites .mosaic-tile-content h2 {
+    text-align: center;
+    padding-top: 130px;
+    background-image: url(../images/feature_icons.png);
+    background-repeat: no-repeat;
+}
+.section-fonctionnalites .mosaic-tile-content.multilingual h2 {
+    background-position: center 0;
+}
+.section-fonctionnalites .mosaic-tile-content.installing h2 {
+    background-position: center -250px;
+}
+.section-fonctionnalites .mosaic-tile-content.authentication h2 {
+    background-position: center -500px;
+}
+.section-fonctionnalites .mosaic-tile-content.extensibility h2 {
+    background-position: center -750px;
+}
+.section-fonctionnalites .mosaic-tile-content.documentation h2 {
+    background-position: center -1000px;
+}
+.section-fonctionnalites .mosaic-tile-content.designer h2 {
+    background-position: center -1250px;
+}
+.section-fonctionnalites .mosaic-tile-content.search h2 {
+    background-position: center -1500px;
+}
+.section-fonctionnalites .mosaic-tile-content.enterprise h2 {
+    background-position: center -1750px;
+}
+.section-fonctionnalites .mosaic-tile-content.multisite h2 {
+    background-position: center -2000px;
+}
+.section-fonctionnalites .mosaic-tile-content.workflows h2 {
+    background-position: center -2250px;
+}
+.section-fonctionnalites .mosaic-tile-content.security h2 {
+    background-position: center -2500px;
+}
+.section-fonctionnalites .mosaic-tile-content.scalability h2 {
+    background-position: center -2750px;
+}
+.section-fonctionnalites .mosaic-tile-content.accessibility h2 {
+    background-position: center -3000px;
+}
+.section-fonctionnalites .mosaic-tile-content.intranet h2 {
+    background-position: center -3250px;
+}
+
 /*           PROVIDERS                  */
 .template-folder_listing.section-providers #content-core a {
     background: none !important;
