@@ -667,7 +667,7 @@ span.address {
     margin-right: 0;
 }
 .portlet-static-try-plone li a,
-#content .mosaic-width-full a {
+#content .mosaic-tile-content.try-plone a {
     background-color: #00bef1;
     text-transform: uppercase;
     color: #ffffff;
